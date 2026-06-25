@@ -23,7 +23,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setPanelOpen(true)}
-            aria-label={`Favorieten, ${count} ${count !== 1 ? "artikel" : "artikelen"}`}
+            aria-label={`Favorieten, ${count} ${count === 1 ? "artikel" : "artikelen"}`}
             aria-expanded={panelOpen}
             aria-controls="wishlist"
             className={`relative flex items-center justify-center w-10 h-10 ${styles.wishlistButton}`}
@@ -31,7 +31,7 @@ export function Header() {
             <HeartIcon />
 
             <span
-              aria-live="polite"
+              aria-hidden="true"
               className={`absolute -top-1 -right-1 flex items-center justify-center ${styles.badge} ${count === 0 ? "hidden" : ""}`}
             >
               {count}

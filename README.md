@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Intergamma Frontend Developer Assessment
 
-## Getting Started
+This is the assessment for front-end developers at Intergamma. We expect this assignment will take you about 4 hours to complete. Please submit your solution within 24 hours after receiving this assignment. Please use a code hosting platform such as GitHub and send us the URL.
 
-First, run the development server:
+## The assignment
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Build a basic Product Listing Page, showing some fake products originating from a JSON file of your own creation.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Add a "wishlist" widget that allows adding/removing products on the wishlist. Wishlist items should have a quantity that can be changed. Wishlist items should persist between browser sessions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The page should have a header with company logo and a "favorites" icon. The favorites icon should have a badge showing the number of items currently on the wishlist, much like the shopping cart at gamma.nl shows the number of items in the cart.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The wishlist itself should be presented in a "side panel" which can be opened by clicking the "favorites" icon in the header. The side panel should overlay the Product Listing Page.
 
-## Learn More
+## Technical Requirements
 
-To learn more about Next.js, take a look at the following resources:
+Please build the assignment using technologies that align with our current front-end stack:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js** (demonstrate understanding of both Server Components / server-side rendering and Client Components where appropriate)
+- **TypeScript**
+- **Tailwind CSS**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Additionally, we value accessibility and inclusive design. Please ensure your solution follows accessibility best practices where appropriate, including but not limited to:
 
-## Deploy on Vercel
+- Semantic HTML
+- Keyboard navigation support
+- Proper use of ARIA attributes when needed
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We are interested in seeing how you approach both developer experience and user experience, including accessibility considerations. We would also like to see conscious decisions regarding what is rendered on the server versus what is handled on the client within Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Good luck!

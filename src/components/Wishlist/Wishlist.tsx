@@ -53,7 +53,7 @@ export function Wishlist({ isOpen, onClose }: Props) {
           id="wishlist"
           role="dialog"
           aria-modal="true"
-          aria-label="Favorieten"
+          aria-labelledby="wishlist-title"
           aria-hidden={!isOpen}
           inert={!isOpen || undefined}
           className={`fixed top-0 right-0 h-full z-30 flex flex-col ${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
@@ -61,7 +61,9 @@ export function Wishlist({ isOpen, onClose }: Props) {
           <div
             className={`flex items-center justify-between p-4 ${styles.header}`}
           >
-            <h2 className={styles.title}>Favorieten ({count})</h2>
+            <h2 id="wishlist-title" className={styles.title}>
+              Favorieten ({count})
+            </h2>
             <button
               ref={closeButtonRef}
               type="button"
