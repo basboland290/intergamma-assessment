@@ -6,17 +6,18 @@ import styles from "./WishlistItem.module.scss";
 
 type Props = {
   productId: string;
+  name: string;
   quantity: number;
 };
 
-export function WishlistItem({ productId, quantity }: Props) {
+export function WishlistItem({ productId, name, quantity }: Props) {
   const { dispatch } = useWishlist();
 
   return (
     <div
       className={`flex items-center justify-between gap-2 pb-4 ${styles.item}`}
     >
-      <span className={styles.productId}>{productId}</span>
+      <span className={`line-clamp-1 ${styles.name}`}>{name}</span>
 
       <div className="flex items-center gap-2">
         <button
