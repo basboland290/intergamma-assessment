@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { FocusTrap } from "focus-trap-react";
 
 import { useWishlist } from "@/context/WishlistContext";
 import { getProducts } from "@/lib/products";
@@ -49,43 +50,46 @@ export function Wishlist({ isOpen, onClose }: Props) {
         />
       )}
 
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-label="Favorieten"
-        aria-hidden={!isOpen}
-        className={`fixed top-0 right-0 h-full z-30 flex flex-col ${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
-      >
+      <FocusTrap active={isOpen}>
         <div
-          className={`flex items-center justify-between p-4 ${styles.header}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Favorieten"
+          aria-hidden={!isOpen}
+          inert={!isOpen || undefined}
+          className={`fixed top-0 right-0 h-full z-30 flex flex-col ${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
         >
-          <h2 className={styles.title}>Favorieten ({count})</h2>
-          <button
-            ref={closeButtonRef}
-            type="button"
-            onClick={onClose}
-            aria-label="Sluit favorieten"
-            className={styles.closeButton}
+          <div
+            className={`flex items-center justify-between p-4 ${styles.header}`}
           >
-            ✕
-          </button>
-        </div>
+            <h2 className={styles.title}>Favorieten ({count})</h2>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              onClick={onClose}
+              aria-label="Sluit favorieten"
+              className={styles.closeButton}
+            >
+              ✕
+            </button>
+          </div>
 
-        <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
-          {items.length === 0 ? (
-            <p className={styles.empty}>Je hebt nog geen favorieten.</p>
-          ) : (
-            items.map((item) => (
-              <WishlistItem
-                key={item.productId}
-                productId={item.productId}
-                name={productMap[item.productId]?.name ?? item.productId}
-                quantity={item.quantity}
-              />
-            ))
-          )}
+          <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
+            {items.length === 0 ? (
+              <p className={styles.empty}>Je hebt nog geen favorieten.</p>
+            ) : (
+              items.map((item) => (
+                <WishlistItem
+                  key={item.productId}
+                  productId={item.productId}
+                  name={productMap[item.productId]?.name ?? item.productId}
+                  quantity={item.quantity}
+                />
+              ))
+            )}
+          </div>
         </div>
-      </div>
+      </FocusTrap>
     </>
   );
 }
