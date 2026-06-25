@@ -1,14 +1,12 @@
 import { getProducts } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
 
-import styles from "./page.module.scss";
-
 export default function Home() {
   const products = getProducts();
 
   return (
     <main className="max-w-screen-xl mx-auto px-4 py-6">
-      <h1 className={`text-2xl font-bold mb-1 ${styles.title}`}>
+      <h1 className="mb-1 text-[32px] font-extrabold leading-[42px] text-black">
         Boormachines
       </h1>
       <p className="text-sm text-gray-500 mb-6">{products.length} resultaten</p>

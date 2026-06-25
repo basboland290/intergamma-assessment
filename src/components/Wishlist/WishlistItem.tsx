@@ -2,8 +2,6 @@
 
 import { useWishlist } from "@/context/WishlistContext";
 
-import styles from "./WishlistItem.module.scss";
-
 type Props = {
   productId: string;
   name: string;
@@ -14,10 +12,8 @@ export function WishlistItem({ productId, name, quantity }: Props) {
   const { dispatch } = useWishlist();
 
   return (
-    <article
-      className={`flex items-center justify-between gap-2 pb-4 ${styles.item}`}
-    >
-      <span className={`line-clamp-1 ${styles.name}`}>{name}</span>
+    <article className="flex items-center justify-between gap-2 border-b border-gray-200 pb-4">
+      <span className="line-clamp-1 text-sm font-medium">{name}</span>
 
       <div className="flex items-center gap-2">
         <button
@@ -32,11 +28,11 @@ export function WishlistItem({ productId, name, quantity }: Props) {
                 })
               : dispatch({ type: "REMOVE", productId })
           }
-          className={`flex items-center justify-center ${styles.stepperButton}`}
+          className="flex h-[28px] w-[28px] items-center justify-center rounded-[4px] border border-gray-200 text-sm focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#003878]"
         >
           −
         </button>
-        <span className={styles.quantity} aria-label={`Aantal: ${quantity}`}>
+        <span className="w-4 text-center text-sm" aria-label={`Aantal: ${quantity}`}>
           {quantity}
         </span>
         <button
@@ -49,7 +45,7 @@ export function WishlistItem({ productId, name, quantity }: Props) {
               quantity: quantity + 1,
             })
           }
-          className={`flex items-center justify-center ${styles.stepperButton}`}
+          className="flex h-[28px] w-[28px] items-center justify-center rounded-[4px] border border-gray-200 text-sm focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#003878]"
         >
           +
         </button>
@@ -57,7 +53,7 @@ export function WishlistItem({ productId, name, quantity }: Props) {
           type="button"
           aria-label={`Verwijder ${name} uit favorieten`}
           onClick={() => dispatch({ type: "REMOVE", productId })}
-          className={`ml-2 ${styles.removeButton}`}
+          className="ml-2 rounded-[4px] text-sm text-red-500 hover:text-red-700 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#003878]"
         >
           ✕
         </button>

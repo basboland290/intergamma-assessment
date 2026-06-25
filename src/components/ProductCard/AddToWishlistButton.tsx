@@ -5,8 +5,6 @@ import type { Product } from "@/lib/products";
 import { useWishlist } from "@/context/WishlistContext";
 import { HeartIcon } from "@/components/ui/HeartIcon";
 
-import styles from "./AddToWishlistButton.module.scss";
-
 type Props = { product: Product };
 
 export function AddToWishlistButton({ product }: Props) {
@@ -37,7 +35,7 @@ export function AddToWishlistButton({ product }: Props) {
           ? `Verwijder ${product.name} uit favorieten`
           : `Sla ${product.name} op in favorieten`
       }
-      className={`flex items-center justify-center w-11 h-11 shrink-0 ${styles.button} ${isInWishlist ? styles.active : ""}`}
+      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-[4px] border border-green-600 text-green-600 transition-colors hover:border-gray-400 hover:text-gray-600 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#003878] ${isInWishlist ? "bg-green-600 text-white hover:border-gray-400 hover:text-gray-600" : ""}`}
     >
       <HeartIcon filled={isInWishlist} />
     </button>
