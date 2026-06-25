@@ -1,7 +1,8 @@
 "use client";
 
-import { useWishlist } from "@/context/WishlistContext";
 import type { Product } from "@/lib/products";
+
+import { useWishlist } from "@/context/WishlistContext";
 import { HeartIcon } from "@/components/ui/HeartIcon";
 
 type Props = {

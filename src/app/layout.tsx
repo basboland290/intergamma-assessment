@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Overpass } from "next/font/google";
+
 import { WishlistProvider } from "@/context/WishlistContext";
 import { Header } from "@/components/Header";
+
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const overpass = Overpass({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "800"],
+  variable: "--font-overpass",
 });
 
 export const metadata: Metadata = {
@@ -40,10 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${overpass.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <WishlistProvider>
           <Header />
