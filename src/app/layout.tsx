@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${overpass.variable} h-full antialiased`}>
+    <html lang="nl" className={`${overpass.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <WishlistProvider>
           <Header />
