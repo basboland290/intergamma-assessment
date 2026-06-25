@@ -11,6 +11,8 @@ export function HeartIcon({ filled = false }: Props) {
       stroke="currentColor"
       strokeWidth={2}
       className="w-5 h-5"
+      aria-hidden="true"
+      focusable="false"
     >
       <path
         strokeLinecap="round"

@@ -12,3 +12,12 @@
   width: 20px;
   height: 20px;
 }
+
+.wishlistButton {
+  border-radius: 4px;
+
+  &:focus-visible {
+    outline: 3px solid #003878;
+    outline-offset: 2px;
+  }
+}

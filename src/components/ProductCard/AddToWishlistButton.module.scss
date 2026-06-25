@@ -5,6 +5,11 @@
   transition:
     border-color 0.15s,
     color 0.15s;
+
+  &:focus-visible {
+    outline: 3px solid #003878;
+    outline-offset: 2px;
+  }
 }
 
 .button:hover {

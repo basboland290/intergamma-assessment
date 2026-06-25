@@ -31,10 +31,16 @@
   font-size: 1.25rem;
   font-weight: 700;
   color: #6b7280;
-}
+  border-radius: 4px;
 
-.closeButton:hover {
-  color: #111827;
+  &:hover {
+    color: #111827;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #003878;
+    outline-offset: 2px;
+  }
 }
 
 .empty {

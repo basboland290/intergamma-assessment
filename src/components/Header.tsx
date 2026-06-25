@@ -23,8 +23,10 @@ export function Header() {
           <button
             type="button"
             onClick={() => setPanelOpen(true)}
-            aria-label={`Favorieten, ${count} item${count !== 1 ? "s" : ""}`}
-            className="relative flex items-center justify-center w-10 h-10"
+            aria-label={`Favorieten, ${count} ${count !== 1 ? "artikel" : "artikelen"}`}
+            aria-expanded={panelOpen}
+            aria-controls="wishlist"
+            className={`relative flex items-center justify-center w-10 h-10 ${styles.wishlistButton}`}
           >
             <HeartIcon />
 

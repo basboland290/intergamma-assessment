@@ -50,6 +50,7 @@ export function Wishlist({ isOpen, onClose }: Props) {
 
       <FocusTrap active={isOpen}>
         <div
+          id="wishlist"
           role="dialog"
           aria-modal="true"
           aria-label="Favorieten"

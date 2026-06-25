@@ -14,7 +14,7 @@ export function WishlistItem({ productId, name, quantity }: Props) {
   const { dispatch } = useWishlist();
 
   return (
-    <div
+    <article
       className={`flex items-center justify-between gap-2 pb-4 ${styles.item}`}
     >
       <span className={`line-clamp-1 ${styles.name}`}>{name}</span>
@@ -36,7 +36,9 @@ export function WishlistItem({ productId, name, quantity }: Props) {
         >
           −
         </button>
-        <span className={styles.quantity}>{quantity}</span>
+        <span className={styles.quantity} aria-label={`Aantal: ${quantity}`}>
+          {quantity}
+        </span>
         <button
           type="button"
           aria-label={`Verhoog aantal van ${name}`}
@@ -60,6 +62,6 @@ export function WishlistItem({ productId, name, quantity }: Props) {
           ✕
         </button>
       </div>
-    </div>
+    </article>
   );
 }
