@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Product } from "@/lib/products";
+import { AddToWishlistButton } from "@/components/AddToWishlistButton";
 
 type Props = {
   product: Product;
@@ -74,26 +75,7 @@ export function ProductCard({ product }: Props) {
             </svg>
           </button>
 
-          {/* wishlist button — square, bordered, heart icon (client island later) */}
-          <button
-            type="button"
-            className="flex items-center justify-center w-11 h-11 border border-green-600 hover:border-gray-400 rounded text-green-600 hover:text-gray-600 transition-colors shrink-0"
-            aria-label={`Sla ${product.name} op in favorieten`}
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </button>
+          <AddToWishlistButton product={product} />
         </div>
       </div>
     </article>
