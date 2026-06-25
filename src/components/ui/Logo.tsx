@@ -1,0 +1,27 @@
+export function Logo() {
+  return (
+    <span className="gamma:rounded outline-offset-1 outline-border-focus focus-visible:outline-solid focus-visible:outline-[3px]">
+      <span className="sr-only">GAMMA</span>
+      <svg
+        width="96"
+        height="32"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 68 24"
+        aria-hidden="true"
+      >
+        <rect
+          width="68"
+          height="19.29"
+          y="2.36"
+          rx="1.22"
+          ry="1.22"
+          style={{ fill: "rgb(0, 56, 120)" }}
+        />
+        <path
+          d="M9.55 10.39h4.73v5.51c0 .51-.42.92-.94.92H5.61c-.43 0-.78-.36-.78-.8V7.98c0-.44.35-.8.78-.8h8.68v1.61H7.98v6.43h3.94v-3.21H9.55V10.4m16.56 6.42V7.98c0-.44-.35-.8-.78-.8h-6.31v1.61h3.94v6.43h-3.94V12h2.36v-1.61h-3.95c-.43 0-.78.36-.78.8v4.83c0 .44.35.8.78.8zm37.07 0V7.98c0-.44-.35-.8-.78-.8h-6.31v1.61h3.94v6.43h-3.94V12h2.36v-1.61H54.5c-.43 0-.78.36-.78.8v4.83c0 .44.35.8.78.8zM37.95 7.18c.43 0 .78.36.78.8v8.85h-3.15V8.79H34v3.22h-1.58V8.79h-1.58v8.04h-2.36V7.98c0-.44.35-.8.78-.8zm12.61 0c.43 0 .78.36.78.8v8.85h-3.15V8.79h-1.58v3.22h-1.58V8.79h-1.58v8.04h-2.36V7.98c0-.44.35-.8.78-.8z"
+          style={{ fill: "rgb(255, 255, 255)", fillRule: "evenodd" }}
+        />
+      </svg>
+    </span>
+  );
+}

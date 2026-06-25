@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { useWishlist } from "@/context/WishlistContext";
-import { WishlistPanel } from "@/components/WishlistPanel";
+import { Wishlist } from "@/components/Wishlist";
 import { HeartIcon } from "@/components/ui/HeartIcon";
+import { Logo } from "@/components/ui/Logo";
 
 export function Header() {
   const { items } = useWishlist();
@@ -14,7 +15,7 @@ export function Header() {
     <>
       <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
         <div className="max-w-screen-xl mx-auto px-4 h-14 flex items-center justify-between">
-          <span className="font-bold text-green-700 text-lg">Gamma</span>
+          <Logo />
 
           <button
             type="button"
@@ -36,7 +37,7 @@ export function Header() {
         </div>
       </header>
 
-      <WishlistPanel isOpen={panelOpen} onClose={() => setPanelOpen(false)} />
+      <Wishlist isOpen={panelOpen} onClose={() => setPanelOpen(false)} />
     </>
   );
 }

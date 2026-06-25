@@ -1,5 +1,5 @@
 import { getProducts } from "@/lib/products";
-import { ProductCard } from "@/components/ProductCard";
+import { ProductCard } from "@/components/ProductCard/ProductCard";
 
 export default function Home() {
   const products = getProducts();
