@@ -8,15 +8,19 @@ import {
   type ReactNode,
 } from "react";
 
+import type { Product } from "@/lib/products";
+
+export type WishlistProduct = Pick<Product, "id" | "name">;
+
 export type WishlistItem = {
-  productId: string;
+  product: WishlistProduct;
   quantity: number;
 };
 
 type State = { items: WishlistItem[] };
 
 type Action =
-  | { type: "ADD"; productId: string }
+  | { type: "ADD"; product: WishlistProduct }
   | { type: "REMOVE"; productId: string }
   | { type: "SET_QUANTITY"; productId: string; quantity: number }
   | { type: "LOAD"; items: WishlistItem[] };
@@ -24,20 +28,20 @@ type Action =
 function reducer(state: State, action: Action): State {
   switch (action.type) {
     case "ADD":
-      if (state.items.find((i) => i.productId === action.productId)) {
+      if (state.items.find((i) => i.product.id === action.product.id)) {
         return state;
       }
       return {
-        items: [...state.items, { productId: action.productId, quantity: 1 }],
+        items: [...state.items, { product: action.product, quantity: 1 }],
       };
     case "REMOVE":
       return {
-        items: state.items.filter((i) => i.productId !== action.productId),
+        items: state.items.filter((i) => i.product.id !== action.productId),
       };
     case "SET_QUANTITY":
       return {
         items: state.items.map((i) =>
-          i.productId === action.productId
+          i.product.id === action.productId
             ? { ...i, quantity: action.quantity }
             : i,
         ),

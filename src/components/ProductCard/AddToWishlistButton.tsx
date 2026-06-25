@@ -11,13 +11,19 @@ type Props = { product: Product };
 
 export function AddToWishlistButton({ product }: Props) {
   const { items, dispatch } = useWishlist();
-  const isInWishlist = items.some((item) => item.productId === product.id);
+  const isInWishlist = items.some((item) => item.product.id === product.id);
 
   function toggle() {
     if (isInWishlist) {
       dispatch({ type: "REMOVE", productId: product.id });
     } else {
-      dispatch({ type: "ADD", productId: product.id });
+      dispatch({
+        type: "ADD",
+        product: {
+          id: product.id,
+          name: product.name,
+        },
+      });
     }
   }
 

@@ -1,6 +1,6 @@
 export function Logo() {
   return (
-    <span className="gamma:rounded outline-offset-1 outline-border-focus focus-visible:outline-solid focus-visible:outline-[3px]">
+    <>
       <span className="sr-only">GAMMA</span>
       <svg
         width="96"
@@ -22,6 +22,6 @@ export function Logo() {
           style={{ fill: "rgb(255, 255, 255)", fillRule: "evenodd" }}
         />
       </svg>
-    </span>
+    </>
   );
 }

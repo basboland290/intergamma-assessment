@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { FocusTrap } from "focus-trap-react";
 
 import { useWishlist } from "@/context/WishlistContext";
-import { getProducts } from "@/lib/products";
 
 import { WishlistItem } from "./WishlistItem";
 import styles from "./Wishlist.module.scss";
@@ -18,7 +17,6 @@ export function Wishlist({ isOpen, onClose }: Props) {
   const { items } = useWishlist();
   const count = items.reduce((sum, item) => sum + item.quantity, 0);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const productMap = Object.fromEntries(getProducts().map((p) => [p.id, p]));
 
   useEffect(() => {
     if (isOpen) closeButtonRef.current?.focus();
@@ -80,9 +78,9 @@ export function Wishlist({ isOpen, onClose }: Props) {
             ) : (
               items.map((item) => (
                 <WishlistItem
-                  key={item.productId}
-                  productId={item.productId}
-                  name={productMap[item.productId]?.name ?? item.productId}
+                  key={item.product.id}
+                  productId={item.product.id}
+                  name={item.product.name}
                   quantity={item.quantity}
                 />
               ))

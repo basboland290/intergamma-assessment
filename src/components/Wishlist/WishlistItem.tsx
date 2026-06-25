@@ -22,7 +22,7 @@ export function WishlistItem({ productId, name, quantity }: Props) {
       <div className="flex items-center gap-2">
         <button
           type="button"
-          aria-label="Verminder aantal"
+          aria-label={`Verminder aantal van ${name}`}
           onClick={() =>
             quantity > 1
               ? dispatch({
@@ -39,7 +39,7 @@ export function WishlistItem({ productId, name, quantity }: Props) {
         <span className={styles.quantity}>{quantity}</span>
         <button
           type="button"
-          aria-label="Verhoog aantal"
+          aria-label={`Verhoog aantal van ${name}`}
           onClick={() =>
             dispatch({
               type: "SET_QUANTITY",
@@ -53,7 +53,7 @@ export function WishlistItem({ productId, name, quantity }: Props) {
         </button>
         <button
           type="button"
-          aria-label={`Verwijder ${productId} uit favorieten`}
+          aria-label={`Verwijder ${name} uit favorieten`}
           onClick={() => dispatch({ type: "REMOVE", productId })}
           className={`ml-2 ${styles.removeButton}`}
         >

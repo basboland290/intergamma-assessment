@@ -3,7 +3,8 @@
 }
 
 .panel {
-  width: 33vw;
+  width: 100%;
+  max-width: 480px;
   background: white;
   box-shadow: -4px 0 16px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
