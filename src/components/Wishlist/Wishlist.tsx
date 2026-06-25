@@ -10,16 +10,23 @@ import { WishlistItem } from "./WishlistItem";
 type Props = {
   isOpen: boolean;
   onClose: () => void;
+  triggerRef: React.RefObject<HTMLButtonElement>;
 };
 
-export function Wishlist({ isOpen, onClose }: Props) {
+export function Wishlist({ isOpen, onClose, triggerRef }: Props) {
   const { items } = useWishlist();
   const count = items.reduce((sum, item) => sum + item.quantity, 0);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const hasMounted = useRef(false);
 
   useEffect(() => {
-    if (isOpen) closeButtonRef.current?.focus();
-  }, [isOpen]);
+    if (!hasMounted.current) { hasMounted.current = true; return; }
+    if (isOpen) {
+      closeButtonRef.current?.focus();
+    } else {
+      triggerRef.current?.focus();
+    }
+  }, [isOpen, triggerRef]);
 
   useEffect(() => {
     if (!isOpen) return;

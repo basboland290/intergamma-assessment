@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { useWishlist } from "@/context/WishlistContext";
 import { Wishlist } from "@/components/Wishlist";
@@ -11,6 +11,7 @@ export function Header() {
   const { items } = useWishlist();
   const count = items.reduce((sum, item) => sum + item.quantity, 0);
   const [panelOpen, setPanelOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   return (
     <>
@@ -19,6 +20,7 @@ export function Header() {
           <Logo />
 
           <button
+            ref={triggerRef}
             type="button"
             onClick={() => setPanelOpen(true)}
             aria-label={`Favorieten, ${count} ${count === 1 ? "artikel" : "artikelen"}`}
@@ -38,7 +40,7 @@ export function Header() {
         </div>
       </header>
 
-      <Wishlist isOpen={panelOpen} onClose={() => setPanelOpen(false)} />
+      <Wishlist isOpen={panelOpen} onClose={() => setPanelOpen(false)} triggerRef={triggerRef} />
     </>
   );
 }
