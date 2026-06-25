@@ -1,0 +1,31 @@
+.item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.productId {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.stepperButton {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.quantity {
+  font-size: 0.875rem;
+  text-align: center;
+  width: 16px;
+}
+
+.removeButton {
+  font-size: 0.875rem;
+  color: #ef4444;
+}
+
+.removeButton:hover {
+  color: #b91c1c;
+}

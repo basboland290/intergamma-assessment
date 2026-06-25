@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+
 import { useWishlist } from "@/context/WishlistContext";
+
 import { WishlistItem } from "./WishlistItem";
+import styles from "./Wishlist.module.scss";
 
 type Props = {
   isOpen: boolean;
@@ -38,7 +41,7 @@ export function Wishlist({ isOpen, onClose }: Props) {
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-20"
+          className={`fixed inset-0 z-20 ${styles.backdrop}`}
           onClick={onClose}
           aria-hidden="true"
         />
@@ -48,18 +51,18 @@ export function Wishlist({ isOpen, onClose }: Props) {
         role="dialog"
         aria-modal="true"
         aria-label="Favorieten"
-        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-xl z-30 flex flex-col transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full z-30 flex flex-col ${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
       >
-        <div className="flex items-center justify-between p-4 border-b">
-          <h2 className="font-bold text-lg">Favorieten ({count})</h2>
+        <div
+          className={`flex items-center justify-between p-4 ${styles.header}`}
+        >
+          <h2 className={styles.title}>Favorieten ({count})</h2>
           <button
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
             aria-label="Sluit favorieten"
-            className="text-gray-500 hover:text-gray-800 text-xl font-bold"
+            className={styles.closeButton}
           >
             ✕
           </button>
@@ -67,9 +70,7 @@ export function Wishlist({ isOpen, onClose }: Props) {
 
         <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
           {items.length === 0 ? (
-            <p className="text-gray-500 text-sm">
-              Je hebt nog geen favorieten.
-            </p>
+            <p className={styles.empty}>Je hebt nog geen favorieten.</p>
           ) : (
             items.map((item) => (
               <WishlistItem

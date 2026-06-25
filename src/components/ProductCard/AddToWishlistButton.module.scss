@@ -1,0 +1,19 @@
+.button {
+  border-radius: 4px;
+  border: 1px solid #16a34a;
+  color: #16a34a;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.button:hover {
+  border-color: #9ca3af;
+  color: #4b5563;
+}
+
+.active {
+  background-color: #16a34a;
+  border-color: #16a34a;
+  color: white;
+}

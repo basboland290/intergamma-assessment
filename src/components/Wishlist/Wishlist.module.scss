@@ -1,0 +1,42 @@
+.backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.panel {
+  width: 320px;
+  background: white;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.panelOpen {
+  transform: translateX(0);
+}
+
+.panelClosed {
+  transform: translateX(100%);
+}
+
+.header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.closeButton {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.closeButton:hover {
+  color: #111827;
+}
+
+.empty {
+  font-size: 0.875rem;
+  color: #6b7280;
+}

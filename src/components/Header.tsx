@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
+
 import { useWishlist } from "@/context/WishlistContext";
 import { Wishlist } from "@/components/Wishlist";
 import { HeartIcon } from "@/components/ui/HeartIcon";
 import { Logo } from "@/components/ui/Logo";
+
+import styles from "./Header.module.scss";
 
 export function Header() {
   const { items } = useWishlist();
@@ -13,7 +16,7 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
+      <header className={`sticky top-0 z-10 ${styles.header}`}>
         <div className="max-w-screen-xl mx-auto px-4 h-14 flex items-center justify-between">
           <Logo />
 
@@ -28,7 +31,7 @@ export function Header() {
             {count > 0 && (
               <span
                 aria-live="polite"
-                className="absolute -top-1 -right-1 bg-green-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+                className={`absolute -top-1 -right-1 flex items-center justify-center ${styles.badge}`}
               >
                 {count}
               </span>

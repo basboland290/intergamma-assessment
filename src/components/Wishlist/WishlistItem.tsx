@@ -2,6 +2,8 @@
 
 import { useWishlist } from "@/context/WishlistContext";
 
+import styles from "./WishlistItem.module.scss";
+
 type Props = {
   productId: string;
   quantity: number;
@@ -11,8 +13,10 @@ export function WishlistItem({ productId, quantity }: Props) {
   const { dispatch } = useWishlist();
 
   return (
-    <div className="flex items-center justify-between gap-2 border-b pb-4">
-      <span className="text-sm font-medium">{productId}</span>
+    <div
+      className={`flex items-center justify-between gap-2 pb-4 ${styles.item}`}
+    >
+      <span className={styles.productId}>{productId}</span>
 
       <div className="flex items-center gap-2">
         <button
@@ -27,11 +31,11 @@ export function WishlistItem({ productId, quantity }: Props) {
                 })
               : dispatch({ type: "REMOVE", productId })
           }
-          className="w-7 h-7 border rounded flex items-center justify-center text-sm"
+          className={`flex items-center justify-center ${styles.stepperButton}`}
         >
           −
         </button>
-        <span className="w-4 text-center text-sm">{quantity}</span>
+        <span className={styles.quantity}>{quantity}</span>
         <button
           type="button"
           aria-label="Verhoog aantal"
@@ -42,7 +46,7 @@ export function WishlistItem({ productId, quantity }: Props) {
               quantity: quantity + 1,
             })
           }
-          className="w-7 h-7 border rounded flex items-center justify-center text-sm"
+          className={`flex items-center justify-center ${styles.stepperButton}`}
         >
           +
         </button>
@@ -50,7 +54,7 @@ export function WishlistItem({ productId, quantity }: Props) {
           type="button"
           aria-label={`Verwijder ${productId} uit favorieten`}
           onClick={() => dispatch({ type: "REMOVE", productId })}
-          className="text-red-500 hover:text-red-700 text-sm ml-2"
+          className={`ml-2 ${styles.removeButton}`}
         >
           ✕
         </button>
