@@ -53,6 +53,7 @@ export function Wishlist({ isOpen, onClose }: Props) {
         role="dialog"
         aria-modal="true"
         aria-label="Favorieten"
+        aria-hidden={!isOpen}
         className={`fixed top-0 right-0 h-full z-30 flex flex-col ${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
       >
         <div
