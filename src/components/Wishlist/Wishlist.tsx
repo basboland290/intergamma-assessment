@@ -11,6 +11,7 @@ type Props = {
 
 export function Wishlist({ isOpen, onClose }: Props) {
   const { items } = useWishlist();
+  const count = items.reduce((sum, item) => sum + item.quantity, 0);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -52,7 +53,7 @@ export function Wishlist({ isOpen, onClose }: Props) {
         }`}
       >
         <div className="flex items-center justify-between p-4 border-b">
-          <h2 className="font-bold text-lg">Favorieten ({items.length})</h2>
+          <h2 className="font-bold text-lg">Favorieten ({count})</h2>
           <button
             ref={closeButtonRef}
             type="button"

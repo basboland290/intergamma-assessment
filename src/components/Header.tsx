@@ -8,7 +8,7 @@ import { Logo } from "@/components/ui/Logo";
 
 export function Header() {
   const { items } = useWishlist();
-  const count = items.length;
+  const count = items.reduce((sum, item) => sum + item.quantity, 0);
   const [panelOpen, setPanelOpen] = useState(false);
 
   return (
