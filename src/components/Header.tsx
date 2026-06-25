@@ -28,14 +28,12 @@ export function Header() {
           >
             <HeartIcon />
 
-            {count > 0 && (
-              <span
-                aria-live="polite"
-                className={`absolute -top-1 -right-1 flex items-center justify-center ${styles.badge}`}
-              >
-                {count}
-              </span>
-            )}
+            <span
+              aria-live="polite"
+              className={`absolute -top-1 -right-1 flex items-center justify-center ${styles.badge} ${count === 0 ? "hidden" : ""}`}
+            >
+              {count}
+            </span>
           </button>
         </div>
       </header>

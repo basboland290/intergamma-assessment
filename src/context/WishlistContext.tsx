@@ -61,7 +61,11 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const stored = localStorage.getItem("wishlist");
     if (stored) {
-      dispatch({ type: "LOAD", items: JSON.parse(stored) });
+      try {
+        dispatch({ type: "LOAD", items: JSON.parse(stored) });
+      } catch {
+        localStorage.removeItem("wishlist");
+      }
     }
   }, []);
 
