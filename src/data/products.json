@@ -1,0 +1,58 @@
+[
+  {
+    "id": "377060",
+    "name": "Skil 20V 3-delige set met accuboormachine, multitool en schuurmachine 3366AA Brushless incl. 1x 2.0Ah accu + snellader",
+    "description": "3-delige SKIL PWRCORE 20 combiset met accuboormachine, multitool, multischuurmachine, 2.0Ah accu en snellader.",
+    "price": 149.0,
+    "image_url": "https://static.gamma.nl/dam/779334/123"
+  },
+  {
+    "id": "581743",
+    "name": "Bosch klopboormachine EasyImpact 600",
+    "description": "Handzame 600W klopboormachine met softgrip, kunststof koffer en extra handgreep, geschikt voor boren in hout, metaal en zachte steensoorten.",
+    "price": 49.99,
+    "image_url": "https://static.gamma.nl/dam/434578/123"
+  },
+  {
+    "id": "297485",
+    "name": "Bosch 18V accuboormachine EasyDrill Systeembox met 241 accessoires (incl. 2 accu's 1.5Ah + lader)",
+    "description": "Complete Bosch 18V accuboormachine set met Systeembox, 241 accessoires, twee 1.5Ah accu's en lader, voor schroeven en lichte boorklussen.",
+    "price": 169.0,
+    "image_url": "https://static.gamma.nl/dam/679580/123"
+  },
+  {
+    "id": "225473",
+    "name": "Bosch boorhamer PBH2100 RE incl boren en beitelset",
+    "description": "Krachtige en lichte 550W boorhamer met SDS-plus borenset en beitelset, geschikt voor boren, hameren en beitelen in beton en metselwerk.",
+    "price": 82.99,
+    "image_url": "https://static.gamma.nl/dam/525713/123"
+  },
+  {
+    "id": "449837",
+    "name": "Bosch boorhamer PBH 2500 SRE",
+    "description": "Handzame 600W boorhamer met 1.9J slagkracht, SDS-plus boorhouder, adapterboorhouder en borenset.",
+    "price": 115.0,
+    "image_url": "https://static.gamma.nl/dam/495126/123"
+  },
+  {
+    "id": "363454",
+    "name": "Makita 18V LXT accuboor brushless DDF490WF incl. 3Ah accu + snellader",
+    "description": "Brushless Makita 18V LXT accuboormachine met 65Nm koppel, 3Ah accu, snellader en koffer.",
+    "price": 189.0,
+    "image_url": "https://static.gamma.nl/dam/772551/123"
+  },
+  {
+    "id": "267100",
+    "name": "Bosch 18V klopboor EasyImpact incl. 1.5Ah accu+lader en 241-delige accessoireset in luxe koffer",
+    "description": "Allround Bosch 18V accuklopboor met 40Nm koppel, 1.5Ah accu, lader, Systeembox en 241-delige accessoireset.",
+    "price": 149.0,
+    "image_url": "https://static.gamma.nl/dam/599236/123"
+  },
+  {
+    "id": "581740",
+    "name": "Bosch klopboormachine AdvancedImpact 900",
+    "description": "900W klopboormachine voor ervaren klussers met Kick-Back Control, snelspanboorkop, handgreep en kunststof koffer.",
+    "price": 114.0,
+    "image_url": "https://static.gamma.nl/dam/202307/123"
+  }
+]
